@@ -1,11 +1,9 @@
-"use client"
-// CardRow.tsx
+// CardGrid.tsx
 
 import React from 'react';
-import Card from '../../components/card/card';
-import CardGrid from '@/components/card/longCard/longCard';
+import Card from './card';
 
-const CardRow: React.FC = () => {
+const CardGrid: React.FC = () => {
   const cards = [
     { title: 'Card 1', content: 'Content for Card 1' },
     { title: 'Card 2', content: 'Content for Card 2' },
@@ -14,19 +12,12 @@ const CardRow: React.FC = () => {
   ];
 
   return (
-   <>
-    <div className="flex flex-wrap justify-center">
+    <div className="grid grid-cols-2 gap-4 p-4">
       {cards.map((card, index) => (
         <Card key={index} title={card.title} content={card.content} />
       ))}
     </div>
-    <div className="flex flex-wrap justify-center">
-      <CardGrid/>
-    </div>
-    </>
   );
 };
 
-export default CardRow;
-
-
+export default CardGrid;

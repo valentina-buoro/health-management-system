@@ -1,6 +1,7 @@
 // Sidebar.tsx
 
 import React from 'react';
+import Link from 'next/link';
 
 const Sidebar: React.FC = () => {
   return (
@@ -10,13 +11,13 @@ const Sidebar: React.FC = () => {
         <h1 className="text-2xl font-semibold">My Sidebar</h1>
         <ul className="mt-4">
           <li className="mb-2">
-            <a href="#" className="text-blue-300 hover:text-blue-500">Item 1</a>
+            <Link href="/dashboard" className="text-blue-300 hover:text-blue-500">Dashboard</Link>
           </li>
           <li className="mb-2">
-            <a href="#" className="text-blue-300 hover:text-blue-500">Item 2</a>
+            <Link href="/dashboard/inventory" className="text-blue-300 hover:text-blue-500">Inventory</Link>
           </li>
           <li className="mb-2">
-            <a href="#" className="text-blue-300 hover:text-blue-500">Item 3</a>
+            <Link href="/dashboard/reports" className="text-blue-300 hover:text-blue-500">Reports</Link>
           </li>
           {/* Add more items as needed */}
         </ul>
