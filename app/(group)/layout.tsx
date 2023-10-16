@@ -11,7 +11,7 @@ export default function DashboardLayout({
   return (
     <div className="flex h-screen bg-gray-200">
       <Sidebar />
-      <main className="flex-grow p-4">
+      <main className="flex-grow p-4 ">
         {/* Main content goes here */}
         {children}
         {/* Add your main content */}

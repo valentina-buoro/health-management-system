@@ -14,10 +14,10 @@ const Sidebar: React.FC = () => {
             <Link href="/dashboard" className="text-blue-300 hover:text-blue-500">Dashboard</Link>
           </li>
           <li className="mb-2">
-            <Link href="/dashboard/inventory" className="text-blue-300 hover:text-blue-500">Inventory</Link>
+            <Link href="/inventory" className="text-blue-300 hover:text-blue-500">Inventory</Link>
           </li>
           <li className="mb-2">
-            <Link href="/dashboard/reports" className="text-blue-300 hover:text-blue-500">Reports</Link>
+            <Link href="/reports" className="text-blue-300 hover:text-blue-500">Reports</Link>
           </li>
           {/* Add more items as needed */}
         </ul>
