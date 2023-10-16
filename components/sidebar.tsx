@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const Sidebar: React.FC = () => {
   return (
-    <nav className="bg-gray-800 h-full w-64 fixed top-0 left-0 overflow-y-auto">
+    <nav className="bg-gray-800 h-full w-1/5 fixed top-0 left-0 overflow-y-auto">
       {/* Sidebar content goes here */}
       <div className="p-4 text-white">
         <h1 className="text-2xl font-semibold">My Sidebar</h1>
