@@ -1,9 +1,11 @@
 "use client";
-// CardRow.tsx
 
 import React from "react";
-//import Card from '../../../components/card/card';
-import CardGrid from "../../../components/card/longCard/longCard";
+import Dashboard from '../../../public/dashboard.svg'
+import Revenue from '../../../public/revenueCard.svg'
+import HealthBox from '../../../public/healthboxCard.svg'
+import GreenShield from '../../../public/greenShield.svg'
+import RedDanger from '../../../public/dangerShield.svg'
 
 import {
   Card,
@@ -26,48 +28,67 @@ import {
 } from "../../../components/ui/navigation-menu";
 
 import Image from "next/image";
+import SmallCard from "../_components/cards/smallCard";
+import LongCard from "../_components/cards/longCard";
+
 
 const CardRow: React.FC = () => {
   const cards = [
     {
-      title: "Card 1",
-      content: "Content for Card 1",
+      id:1,
+      title: "Good",
+      content: "Inventory Status",
+      icon: GreenShield,
       button: "view detailed report",
+      borderColor:'border-[#01A768]',
+      buttonBg:'bg-[#01A768]'
     },
     {
+      id:2,
       title: "Card 2",
       content: "Content for Card 2",
+      icon: Revenue,
       button: "view detailed report",
+      borderColor: 'border-[#FED600]',
+      buttonBg:'bg-[#FED600]'
     },
     {
+      id:3,
       title: "Card 3",
       content: "Content for Card 3",
+      icon: HealthBox,
       button: "visit inventory",
+      borderColor: 'border-[#03A9F5]',
+      buttonBg: 'bg-[#03A9F5]'
     },
-    { title: "Card 4", content: "Content for Card 4", button: "resolve now" },
+    { 
+      id:4,title: "Card 4", content: "Content for Card 4", icon:RedDanger, button: "resolve now" , borderColor: 'border-[#F0483E]', buttonBg:'bg-[#F0483E]'},
   ];
   const cards2 = [
     {
+      id:1,
       title: "Card 1",
       content: "Content for Card 1",
       button: "view detailed report",
     },
     {
+      id:2,
       title: "Card 2",
       content: "Content for Card 2",
       button: "view detailed report",
     },
     {
+      id:3,
       title: "Card 3",
       content: "Content for Card 3",
       button: "visit inventory",
     },
-    { title: "Card 4", content: "Content for Card 4", button: "resolve now" },
+    { id:4,title: "Card 4", content: "Content for Card 4", button: "resolve now" },
   ];
 
   return (
     <>
-      <div className=" w-4/5 ">
+     
         <div className="flex-1 space-y-4 bg-[#EDF1F5]  p-8 pt-[30px]">
         <div className=" flex justify-between items-center space-y-2">
           <div>
@@ -86,36 +107,17 @@ const CardRow: React.FC = () => {
 
         <div className="flex flex-wrap justify-between bg-[#EDF1F5] pb-[30px]">
           {cards.map((card, index) => (
-            <Card key={index} className="w-[212px] ">
-              <CardHeader className="items-center">
-                <Image src="" alt="hii" />
-                <CardTitle>{card.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="">{card.content}</CardContent>
-              <CardFooter className="w-full h-[27px] p-0 bg-red-800">
-                <Button className="w-full h-full rounded-none">
-                  {card.button}
-                </Button>
-              </CardFooter>
-            </Card>
+            <SmallCard key={card.id} card={card} />
           ))}
         </div>
         <div className="flex-1 flex-wrap  pt-[35px] ">
           <div  className="grid grid-cols-2 gap-[26px] ">
-          {cards2.map((card, index) => (
-            <Card key={index} >
-              <CardTitle>{card.title}</CardTitle>
-              <CardHeader className="items-center">
-                <Button className="w-full h-full rounded-none">
-                  {card.button}
-                </Button>
-              </CardHeader>
-              <CardContent className="">{card.content}</CardContent>
-            </Card>
+          {cards2.map((card) => (
+            <LongCard key = {card.id} card = {card}/>
           ))}
           </div>
         </div>
-      </div>
+     
     </>
   );
 };

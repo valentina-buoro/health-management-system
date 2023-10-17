@@ -1,7 +1,7 @@
 // App.tsx
-
 import React from "react";
-import Sidebar from "../../components/sidebar";
+import Sidebar from "./_components/sidebar";
+import Navbar from "./_components/navbar";
 
 export default function DashboardLayout({
   children,
@@ -9,13 +9,14 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex h-screen bg-gray-200">
+    <div className=" h-screen bg-red-200">
+      <div className="h-[80px] md:pl-56 fixed inset-y-0 w-full z-50"> 
+        <Navbar/>
+      </div>
       <Sidebar />
-      <main className="flex-grow justify-end">
+      <main className="md:pl-56">
         {/* Main content goes here */}
-       <div className="flex justify-end">
        {children}
-       </div>
         {/* Add your main content */}
       </main>
     </div>
