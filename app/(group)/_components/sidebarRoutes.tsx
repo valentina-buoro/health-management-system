@@ -17,7 +17,7 @@ const guestRoutes = [
 const SidebarRoutes = () => {
     const routes = guestRoutes;
   return (
-    <div className='flex flex-col w-full'>
+    <div className='flex flex-col w-full bg-red-300'>
         
         {routes.map((route)=>(
             <SidebarItems key={route.href}  label={route.label} href={route.href} />
