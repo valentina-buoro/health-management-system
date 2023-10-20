@@ -1,7 +1,7 @@
 'use server'
 import React from 'react'
 
-import SidebarItems from './sidebarItems';
+import SidebarItems from "./sidebarItems"
 
 const guestRoutes = [
     {
