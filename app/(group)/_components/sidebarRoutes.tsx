@@ -1,17 +1,14 @@
 'use server'
 import React from 'react'
 
-import { Compass, Layout } from 'lucide-react'
 import SidebarItems from './sidebarItems';
 
 const guestRoutes = [
     {
-        icon: Layout,
         label: 'Dashboard',
         href:'/'
     },
     {
-        icon: Compass,
         label: 'Inventory',
         href:'/inventory'
     }

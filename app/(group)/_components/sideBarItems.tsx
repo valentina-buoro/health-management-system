@@ -6,14 +6,12 @@ import React from 'react'
 import { cn } from '../../../lib/utils';
 
 interface SidebarItemsProps {
-  //icon: LucideIcon;
   label: string;
   href: string;
 }
 
 const SidebarItems = ({
-  //icon: Icon,
-  label,
+label,
   href
 }: SidebarItemsProps) => {
   const pathname = usePathname()
