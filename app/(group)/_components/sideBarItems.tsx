@@ -19,7 +19,7 @@ const SidebarItems = ({
   const pathname = usePathname()
   const router  = useRouter()
 
-  const isActive = (pathname === '/dashboard' && href === '/dashboard') ||  pathname === href || pathname?.startsWith(`${href}/`) 
+  const isActive = (pathname === '/' && href === '/') ||  pathname === href || pathname?.startsWith(`${href}/`) 
 
   const onClick = ()=>{
     router.push(href)
