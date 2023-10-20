@@ -1,7 +1,7 @@
 'use server'
 import React from 'react'
 
-import SidebarItems from "./sidebarItems"
+import SidebarItems from "./sideItems"
 
 const guestRoutes = [
     {
@@ -17,7 +17,7 @@ const guestRoutes = [
 const SidebarRoutes = () => {
     const routes = guestRoutes;
   return (
-    <div className='flex flex-col w-full bg-red-300'>
+    <div className='flex flex-col w-full'>
         
         {routes.map((route)=>(
             <SidebarItems key={route.href}  label={route.label} href={route.href} />
