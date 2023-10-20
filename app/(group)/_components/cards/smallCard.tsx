@@ -23,22 +23,7 @@ import { LucideIcon } from 'lucide-react';
         buttonBg:string
     }
   }
-  const colors =[
-        {
-            green:'#01A768',
-            
-        },
-        {
-            yellow: '#FED600',
-        },
-        {
-            pink: '#F0483E',
-        },
-        {
-            blue: '#03A9F5'
-        }
 
-    ]
 const SmallCard = ({
     card
     

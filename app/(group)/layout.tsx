@@ -9,7 +9,7 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className=" h-screen bg-red-200">
+    <div className=" h-screen">
       <div className="h-[80px] md:pl-56 fixed inset-y-0 w-full z-50"> 
         <Navbar/>
       </div>
