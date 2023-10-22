@@ -7,25 +7,8 @@ import HealthBox from '../../../public/healthboxCard.svg'
 import GreenShield from '../../../public/greenShield.svg'
 import RedDanger from '../../../public/dangerShield.svg'
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "../../../components/ui/card";
 import { Button } from "../../../components/ui/button";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuViewport,
-} from "../../../components/ui/navigation-menu";
+
 
 import Image from "next/image";
 import SmallCard from "../_components/cards/smallCard";

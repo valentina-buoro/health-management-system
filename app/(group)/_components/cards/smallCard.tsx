@@ -10,7 +10,6 @@ import {
     CardHeader,
     CardTitle,
   } from "../../../../components/ui/card";
-import { LucideIcon } from 'lucide-react';
 
   interface CardProps{
     card:{
