@@ -25,6 +25,7 @@ const guestRoutes = [
     },
     {
         icon: Reports,
+        icon2: DropDown,
         label: 'Reports',
         href:'/reports'
     }

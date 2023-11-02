@@ -10,6 +10,7 @@ const Sidebar: React.FC = () => {
     <nav className=" hidden md:flex flex-col bg-[#283342;] h-full w-56 fixed top-0 left-0 overflow-y-auto shadow-sm">
       <div className="p-6">
         <Logo />
+        <h1 className="text-2xl font-semibold text-white py-2">Pharmacy</h1>
       </div>
       <div className="flex flex-col w-full">
 <SidebarRoutes/>
