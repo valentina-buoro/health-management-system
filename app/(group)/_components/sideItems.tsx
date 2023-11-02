@@ -86,9 +86,10 @@ const SidebarItems = ({
       </button>
       {collapsed && (
         <button
+        onClick={onClick2}
           className={cn(
-            "flex items-center  ml-6 text-white  text-sm font-[500] pl-6 transition-all hover:text-white hover:bg-slate-300/20",
-            isActive &&
+            "flex items-center   text-white  text-sm font-[500] pl-12 transition-all hover:text-white hover:bg-slate-300/20",
+            isActive2 &&
               "text-white bg-sky-200/20 hover:bg-sky-200/20 hover:text-white"
           )}
         >
