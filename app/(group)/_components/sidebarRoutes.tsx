@@ -5,7 +5,7 @@ import SidebarItems from "./sideItems"
 import Dashboard from '../../../public/sidebarDashboard.svg'
 import Inventory from '../../../public/sidebarInventory.svg'
 import Reports from '../../../public/sidebarReport.svg'
-import DropDown from '../../../public/dropDown.svg'
+import DropDown from '../../../public/dropdown.svg'
 
 
 const guestRoutes = [
