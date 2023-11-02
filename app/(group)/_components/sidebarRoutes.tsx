@@ -18,7 +18,9 @@ const guestRoutes = [
         icon: Inventory,
         icon2: DropDown,
         label: 'Inventory',
+        label2: 'List of Medicines',
         href:'/inventory',
+        href2:'/inventory/list',
         collapsible: true
     },
     {
@@ -36,7 +38,7 @@ const SidebarRoutes = () => {
     <div className='flex flex-col w-full'>
         
         {routes.map((route)=>(
-            <SidebarItems key={route.href} icon={route.icon}  label={route.label} href={route.href} icon2={route.icon2} collapsible={route.collapsible} />
+            <SidebarItems key={route.href} icon={route.icon}  label={route.label} label2={route.label2}  href={route.href} href2={route.href2} icon2={route.icon2} collapsible={route.collapsible} />
         ))}
         
         </div>
