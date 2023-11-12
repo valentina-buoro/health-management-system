@@ -54,7 +54,7 @@ const SidebarItems = ({
   return (
     <>
       <div
-        onClick={onClick}
+       
         //type="button"
         className={cn(
           "flex items-center  gap-x-2 text-white  text-sm font-[500] pl-6 transition-all hover:text-white hover:bg-slate-300/20 last:mt-56",
@@ -62,11 +62,11 @@ const SidebarItems = ({
             "text-white bg-sky-200/20 hover:bg-sky-200/20 hover:text-white"
         )}
       >
-        <div className="flex items-center gap-x-2 py-4 justify-between">
+        <div className="flex items-center gap-x-2 py-4 justify-between "  onClick={onClick}>
           <Image src={icon} alt={icon} />
           {label}
         </div>
-        <div className="flex flex-row-reverse items-end py-4 justify-between flex-grow">
+        <div className="flex flex-row-reverse items-end py-4 justify-between z-50 flex-grow">
           {icon2 && (
             <Image
               src={icon2}
