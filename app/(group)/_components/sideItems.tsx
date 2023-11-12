@@ -68,12 +68,14 @@ const SidebarItems = ({
         </div>
         <div className="flex flex-row-reverse items-end py-4 justify-between flex-grow">
           {icon2 && (
-            <Image
+          <button>
+              <Image
               src={icon2}
               alt={icon2}
               className="w-4 mr-3"
               onClick={toggleCollapsed}
             />
+          </button>
           )}
         </div>
 
