@@ -28,7 +28,7 @@ const SidebarItems = ({
   const router = useRouter();
 
   const isActive =
-   
+    (pathname === "/" && href === "/") ||
     pathname === href ||
     pathname?.startsWith(`${href}/`);
 
@@ -37,7 +37,7 @@ const SidebarItems = ({
   };
 
   const isActive2 =
-   
+   // (pathname === "/" && href2 === "/") ||
     pathname === href2 ||
     pathname?.startsWith(`${href2}/`);
 

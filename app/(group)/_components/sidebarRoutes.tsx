@@ -20,7 +20,7 @@ const guestRoutes = [
         label: 'Inventory',
         label2: 'List of Medicines',
         href:'/inventory',
-        href2:'/list-of-medicines',
+        href2:'inventory/list-of-medicines',
         collapsible: true
     },
     {
