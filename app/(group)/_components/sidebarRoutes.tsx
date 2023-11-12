@@ -6,7 +6,7 @@ import Dashboard from '../../../public/sidebarDashboard.svg'
 import Inventory from '../../../public/sidebarInventory.svg'
 import Reports from '../../../public/sidebarReport.svg'
 import DropDown from '../../../public/dropdown.svg'
-
+import Settings from '../../../public/settings.svg'
 
 const guestRoutes = [
     {
@@ -30,6 +30,11 @@ const guestRoutes = [
         label2: 'Sales Report',
         href:'/reports',
         href2: '/sales-report'
+    },
+    {
+        icon: Settings,
+        label: 'Configuration/settings',
+        href: 'configure'
     }
 ]
 

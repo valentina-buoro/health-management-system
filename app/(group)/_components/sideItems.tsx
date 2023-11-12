@@ -57,7 +57,7 @@ const SidebarItems = ({
         onClick={onClick}
         type="button"
         className={cn(
-          "flex items-center  gap-x-2 text-white  text-sm font-[500] pl-6 transition-all hover:text-white hover:bg-slate-300/20",
+          "flex items-center  gap-x-2 text-white  text-sm font-[500] pl-6 transition-all hover:text-white hover:bg-slate-300/20 last:mt-56",
           isActive &&
             "text-white bg-sky-200/20 hover:bg-sky-200/20 hover:text-white"
         )}
