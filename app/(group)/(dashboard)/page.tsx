@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Dashboard from '../../../public/dashboard.svg'
 import Revenue from '../../../public/revenueCard.svg'
 import HealthBox from '../../../public/healthboxCard.svg'
 import GreenShield from '../../../public/greenShield.svg'
@@ -10,7 +9,6 @@ import RedDanger from '../../../public/dangerShield.svg'
 import { Button } from "../../../components/ui/button";
 
 
-import Image from "next/image";
 import SmallCard from "../_components/cards/smallCard";
 import LongCard from "../_components/cards/longCard";
 
