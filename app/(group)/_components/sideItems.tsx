@@ -37,7 +37,7 @@ const SidebarItems = ({
   };
 
   const isActive2 =
-   // (pathname === "/" && href2 === "/") ||
+    (pathname === "/" && href2 === "/") ||
     pathname === href2 ||
     pathname?.startsWith(`${href2}/`);
 
@@ -53,9 +53,9 @@ const SidebarItems = ({
 
   return (
     <>
-      <button
+      <div
         onClick={onClick}
-        type="button"
+        //type="button"
         className={cn(
           "flex items-center  gap-x-2 text-white  text-sm font-[500] pl-6 transition-all hover:text-white hover:bg-slate-300/20 last:mt-56",
           isActive &&
@@ -68,14 +68,12 @@ const SidebarItems = ({
         </div>
         <div className="flex flex-row-reverse items-end py-4 justify-between flex-grow">
           {icon2 && (
-          <button>
-              <Image
+            <Image
               src={icon2}
               alt={icon2}
               className="w-4 mr-3"
               onClick={toggleCollapsed}
             />
-          </button>
           )}
         </div>
 
@@ -85,9 +83,9 @@ const SidebarItems = ({
             isActive && "opacity-100 "
           )}
         />
-      </button>
+      </div>
       {collapsed && (
-        <button
+        <div
         onClick={onClick2}
           className={cn(
             "flex items-center   text-white  text-sm font-[500] pl-12 transition-all hover:text-white hover:bg-slate-300/20",
@@ -98,7 +96,7 @@ const SidebarItems = ({
           <div className="flex items-center gap-x-2 py-4 justify-between">
             {label2}
           </div>
-        </button>
+        </div>
       )}
     </>
   );
