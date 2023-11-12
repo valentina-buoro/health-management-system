@@ -4,6 +4,7 @@ import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 import { cn } from "../../../lib/utils";
 import Image from "next/image";
+import DropdownClose from '../../../public/dropdownClose.svg'
 
 interface SidebarItemsProps {
   label: string;
@@ -66,12 +67,15 @@ const SidebarItems = ({
         </div>
         <div className="flex flex-row-reverse items-end py-4 justify-between z-50 flex-grow">
           {icon2 && (
-            <Image
-              src={icon2}
+            <div>
+               <Image
+              src={collapsed? DropdownClose: icon2 }
               alt={icon2}
               className="w-4 mr-3"
               onClick={toggleCollapsed}
             />
+              </div>
+           
           )}
         </div>
 
