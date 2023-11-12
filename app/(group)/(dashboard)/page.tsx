@@ -86,18 +86,18 @@ const CardRow: React.FC = () => {
         </div>
         </div>
 
-        <div className="flex flex-wrap justify-between bg-[#EDF1F5] pb-[30px]">
+        <section className="flex flex-wrap justify-between bg-[#EDF1F5] pb-[30px]">
           {cards.map((card, index) => (
             <SmallCard key={card.id} card={card} />
           ))}
-        </div>
-        <div className="flex-1 flex-wrap  pt-[35px] ">
+        </section>
+        <section className="flex-1 flex-wrap  pt-[35px] ">
           <div  className="grid grid-cols-2 gap-[26px] ">
           {cards2.map((card) => (
             <LongCard key = {card.id} card = {card}/>
           ))}
           </div>
-        </div>
+        </section>
      
     </>
   );

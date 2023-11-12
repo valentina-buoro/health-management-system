@@ -1,5 +1,10 @@
 "use client"
 import React, { useState,useEffect } from 'react'
+import Morning from '../../../public/morningSun.svg'
+import Afternoon from '../../../public/sunny.svg'
+import Evening from '../../../public/moon.svg'
+import Search from '../../../public/search.svg'
+import Image from 'next/image'
 
 const Navbar = () => {
   const d = new Date();
@@ -41,22 +46,33 @@ const Navbar = () => {
 
   
   return (
-    <div className='flex-1 bg-[#F7FAFD]  px-8 pt-[30px]'>
-     <div className='flex justify-between'>
-     <div>
-        <input/>
+    <nav className='flex-1 bg-[#F7FAFD]  px-8 '>
+     <div className='flex justify-between py-3 '>
+     <div className='flex justify-between p-4 w-[440px] rounded-sm bg-[#E3EBF3]'>
+        <input
+        className='bg-inherit w-11/12 border-none outline-none'
+        placeholder='Search for anything here...'
+        />
+        <button className=''>
+          <Image className='w-5' src={Search} alt ={'div icon'}/>
+        </button>
+       
+        
       </div>
-      <div>
-        <p>
-         {greeting}
-        </p>
-        <div>
-          <span>{date} </span>
+      <div className='w-[160px] h-[40px]'>
+        <div className='flex'>
+          <Image   className="w-5 mr-3" src ={ greeting === 'Good evening' ? Evening :  Afternoon} alt ={'Image'}/>
+          <span className='font-medium text-[14px] text-[#1D242E]'> {greeting}</span>
+          
+        </div>
+       
+        <div className='text-xs font-normal text-[#1D242E]'>
+          <span className='mr-3'>{date} </span>
           <span>{actualTime} </span>
         </div>
       </div>
      </div>
-    </div>
+    </nav>
   )
 }
 
