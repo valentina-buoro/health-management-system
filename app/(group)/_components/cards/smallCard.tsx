@@ -30,7 +30,7 @@ const SmallCard = ({
     
   return (
 
-        <Card key={card.id} className= {`w-[212px] rounded-t-[4px] rounded-b-none text-[#1D242E] ${card.borderColor} `}>
+        <Card key={card.id} className= {`w-[125px] md:w-[212px]  rounded-t-[4px] rounded-b-none text-[#1D242E] ${card.borderColor} `}>
               <CardHeader className="items-center">
                 <Image src={card.icon} alt="hii"  />
                 <CardTitle className=' text-[20px] text-center leading-[22px] font-bold '>{card.title}</CardTitle>
