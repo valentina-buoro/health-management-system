@@ -33,7 +33,7 @@ const page = () => {
         </div>
       </section>
       <section className="flex-1 flex-wrap  pt-[35px] ">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[26px] ">
+        <div className="grid grid-cols-1 gap-[26px] ">
           <Card>
             <CardHeader>
               <CardTitle>How to use</CardTitle>
