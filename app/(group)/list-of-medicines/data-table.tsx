@@ -66,6 +66,7 @@ export function DataTable<TData, TValue>({
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </TableCell>
                 ))}
+                <a href="#"> {'>>'}</a>
               </TableRow>
             ))
           ) : (
