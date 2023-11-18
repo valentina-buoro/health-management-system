@@ -52,7 +52,7 @@ const Basic = ({ email }: Props) => {
           >
             <div className="flex items-center gap-[26px] mb-[15px]">
               <div>
-                <label className="text-sm font-bold" htmlFor="email">
+                <label className="text-sm font-normal text-[#1D242E]" htmlFor="email">
                   Medicine Name
                 </label>
                 <div className="flex justify-between p-4 w-[440px] rounded-sm bg-[#E3EBF3]">
@@ -68,7 +68,7 @@ const Basic = ({ email }: Props) => {
                 </div>
               </div>
               <div>
-                <label className="text-sm font-bold" htmlFor="email">
+                <label className="text-sm font-normal text-[#1D242E]" htmlFor="email">
                   Medicine ID
                 </label>
                 <div className="flex justify-between p-4 w-[440px] rounded-sm bg-[#E3EBF3]">
@@ -85,8 +85,8 @@ const Basic = ({ email }: Props) => {
               </div>
             </div>
             <div className="flex items-center gap-[26px] mb-[15px]">
-            <div>
-                <label className="text-sm font-bold" htmlFor="email">
+              <div>
+                <label className="text-sm font-normal text-[#1D242E]" htmlFor="email">
                   Medicine Group
                 </label>
                 <div className="flex justify-between p-4 w-[440px] rounded-sm bg-[#E3EBF3]">
@@ -102,7 +102,7 @@ const Basic = ({ email }: Props) => {
                 </div>
               </div>
               <div>
-                <label className="text-sm font-bold" htmlFor="email">
+                <label className="text-sm font-normal text-[#1D242E]" htmlFor="email">
                   Medicine Quantity
                 </label>
                 <div className="flex justify-between p-4 w-[440px] rounded-sm bg-[#E3EBF3]">
@@ -118,22 +118,36 @@ const Basic = ({ email }: Props) => {
                 </div>
               </div>
             </div>
-            <div>
-                <label className="text-sm font-bold" htmlFor="email">
-                  How to use
-                </label>
-                <div className="flex justify-between p-4 w-[440px] rounded-sm bg-[#E3EBF3]">
-                  <textarea
-                    
-                    name="email"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.email}
-                    className="bg-inherit w-11/12 border-none outline-none"
-                  />
-                  {errors.email && touched.email && errors.email}
-                </div>
+            <div className="mb-[15px]">
+              <label className="text-sm font-normal text-[#1D242E]" htmlFor="email">
+                How to use
+              </label>
+              <div className="flex justify-between p-4 w-[905px] rounded-sm bg-[#E3EBF3]">
+                <textarea
+                  name="email"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.email}
+                  className="bg-inherit w-11/12 border-none outline-none"
+                />
+                {errors.email && touched.email && errors.email}
               </div>
+            </div>
+            <div>
+              <label className="text-sm font-normal text-[#1D242E]" htmlFor="email">
+                Side Effects
+              </label>
+              <div className="flex justify-between p-4 w-[905px] rounded-sm bg-[#E3EBF3]">
+                <textarea
+                  name="email"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.email}
+                  className="bg-inherit w-11/12 border-none outline-none"
+                />
+                {errors.email && touched.email && errors.email}
+              </div>
+            </div>
 
             <input
               type="password"
