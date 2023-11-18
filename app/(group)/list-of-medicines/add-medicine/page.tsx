@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Formik } from "formik";
+import { Button } from "../../../../components/ui/button";
 
 interface Props {
   email: string;
@@ -10,12 +11,7 @@ interface Props {
 const Basic = ({ email }: Props) => {
   return (
     <div>
-      <div className=" flex justify-between items-center space-y-2">
-        <div>
-          <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
-          <p>A quick data overview of the inventory.</p>
-        </div>
-      </div>
+      
       <Formik
         initialValues={{ email: "", password: "" }}
         validate={(values) => {
@@ -50,9 +46,18 @@ const Basic = ({ email }: Props) => {
             onSubmit={handleSubmit}
             className="flex-1 bg-[#EDF1F5] h-screen  px-8 "
           >
+            <div className=" flex justify-between items-center space-y-2">
+        <div>
+          <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
+          <p>A quick data overview of the inventory.</p>
+        </div>
+      </div>
             <div className="flex items-center gap-[26px] mb-[15px]">
               <div>
-                <label className="text-sm font-normal text-[#1D242E]" htmlFor="email">
+                <label
+                  className="text-sm font-normal text-[#1D242E]"
+                  htmlFor="email"
+                >
                   Medicine Name
                 </label>
                 <div className="flex justify-between p-4 w-[440px] rounded-sm bg-[#E3EBF3]">
@@ -68,7 +73,10 @@ const Basic = ({ email }: Props) => {
                 </div>
               </div>
               <div>
-                <label className="text-sm font-normal text-[#1D242E]" htmlFor="email">
+                <label
+                  className="text-sm font-normal text-[#1D242E]"
+                  htmlFor="email"
+                >
                   Medicine ID
                 </label>
                 <div className="flex justify-between p-4 w-[440px] rounded-sm bg-[#E3EBF3]">
@@ -86,7 +94,10 @@ const Basic = ({ email }: Props) => {
             </div>
             <div className="flex items-center gap-[26px] mb-[15px]">
               <div>
-                <label className="text-sm font-normal text-[#1D242E]" htmlFor="email">
+                <label
+                  className="text-sm font-normal text-[#1D242E]"
+                  htmlFor="email"
+                >
                   Medicine Group
                 </label>
                 <div className="flex justify-between p-4 w-[440px] rounded-sm bg-[#E3EBF3]">
@@ -102,7 +113,10 @@ const Basic = ({ email }: Props) => {
                 </div>
               </div>
               <div>
-                <label className="text-sm font-normal text-[#1D242E]" htmlFor="email">
+                <label
+                  className="text-sm font-normal text-[#1D242E]"
+                  htmlFor="email"
+                >
                   Medicine Quantity
                 </label>
                 <div className="flex justify-between p-4 w-[440px] rounded-sm bg-[#E3EBF3]">
@@ -119,7 +133,10 @@ const Basic = ({ email }: Props) => {
               </div>
             </div>
             <div className="mb-[15px]">
-              <label className="text-sm font-normal text-[#1D242E]" htmlFor="email">
+              <label
+                className="text-sm font-normal text-[#1D242E]"
+                htmlFor="email"
+              >
                 How to use
               </label>
               <div className="flex justify-between p-4 w-[905px] rounded-sm bg-[#E3EBF3]">
@@ -134,7 +151,10 @@ const Basic = ({ email }: Props) => {
               </div>
             </div>
             <div>
-              <label className="text-sm font-normal text-[#1D242E]" htmlFor="email">
+              <label
+                className="text-sm font-normal text-[#1D242E]"
+                htmlFor="email"
+              >
                 Side Effects
               </label>
               <div className="flex justify-between p-4 w-[905px] rounded-sm bg-[#E3EBF3]">
@@ -149,17 +169,20 @@ const Basic = ({ email }: Props) => {
               </div>
             </div>
 
-            <input
+            {/*<input
               type="password"
               name="password"
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.password}
             />
-            {errors.password && touched.password && errors.password}
-            <button type="submit" disabled={isSubmitting}>
+        {errors.password && touched.password && errors.password}*/}
+            {/*<button type="submit" disabled={isSubmitting}>
               Submit
-            </button>
+      </button>*/}
+            <Button type="submit" disabled={isSubmitting} className="bg-[#F0483E] flex items-center justify-center mt-10">
+              Save Details
+            </Button>
           </form>
         )}
       </Formik>
