@@ -46,66 +46,94 @@ const Basic = ({ email }: Props) => {
           isSubmitting,
           /* and other goodies */
         }) => (
-          <form onSubmit={handleSubmit} className="flex-1 bg-[#F7FAFD]  px-8 ">
+          <form
+            onSubmit={handleSubmit}
+            className="flex-1 bg-[#EDF1F5] h-screen  px-8 "
+          >
             <div className="flex items-center gap-[26px] mb-[15px]">
-              <div className="flex justify-between p-4 w-[440px] rounded-sm bg-[#E3EBF3]">
-                <input
-                  type="email"
-                  name="email"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.email}
-                  className="bg-inherit w-11/12 border-none outline-none"
-                />
-                {errors.email && touched.email && errors.email}
+              <div>
+                <label className="text-sm font-bold" htmlFor="email">
+                  Medicine Name
+                </label>
+                <div className="flex justify-between p-4 w-[440px] rounded-sm bg-[#E3EBF3]">
+                  <input
+                    type="email"
+                    name="email"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.email}
+                    className="bg-inherit w-11/12 border-none outline-none"
+                  />
+                  {errors.email && touched.email && errors.email}
+                </div>
               </div>
-              <div className="flex justify-between p-4 w-[440px] rounded-sm bg-[#E3EBF3]">
-                <input
-                  type="email"
-                  name="email"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.email}
-                  className="bg-inherit w-11/12 border-none outline-none"
-                />
-                {errors.email && touched.email && errors.email}
+              <div>
+                <label className="text-sm font-bold" htmlFor="email">
+                  Medicine ID
+                </label>
+                <div className="flex justify-between p-4 w-[440px] rounded-sm bg-[#E3EBF3]">
+                  <input
+                    type="email"
+                    name="email"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.email}
+                    className="bg-inherit w-11/12 border-none outline-none"
+                  />
+                  {errors.email && touched.email && errors.email}
+                </div>
+              </div>
+            </div>
+            <div className="flex items-center gap-[26px] mb-[15px]">
+            <div>
+                <label className="text-sm font-bold" htmlFor="email">
+                  Medicine Group
+                </label>
+                <div className="flex justify-between p-4 w-[440px] rounded-sm bg-[#E3EBF3]">
+                  <input
+                    type="email"
+                    name="email"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.email}
+                    className="bg-inherit w-11/12 border-none outline-none"
+                  />
+                  {errors.email && touched.email && errors.email}
+                </div>
+              </div>
+              <div>
+                <label className="text-sm font-bold" htmlFor="email">
+                  Medicine Quantity
+                </label>
+                <div className="flex justify-between p-4 w-[440px] rounded-sm bg-[#E3EBF3]">
+                  <input
+                    type="email"
+                    name="email"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.email}
+                    className="bg-inherit w-11/12 border-none outline-none"
+                  />
+                  {errors.email && touched.email && errors.email}
+                </div>
               </div>
             </div>
             <div>
-              <div className="flex justify-between p-4 w-[440px] rounded-sm bg-[#E3EBF3]">
-                <input
-                  type="email"
-                  name="email"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.email}
-                  className="bg-inherit w-11/12 border-none outline-none"
-                />
-                {errors.email && touched.email && errors.email}
+                <label className="text-sm font-bold" htmlFor="email">
+                  How to use
+                </label>
+                <div className="flex justify-between p-4 w-[440px] rounded-sm bg-[#E3EBF3]">
+                  <textarea
+                    
+                    name="email"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.email}
+                    className="bg-inherit w-11/12 border-none outline-none"
+                  />
+                  {errors.email && touched.email && errors.email}
+                </div>
               </div>
-              <div className="flex justify-between p-4 w-[440px] rounded-sm bg-[#E3EBF3]">
-                <input
-                  type="email"
-                  name="email"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.email}
-                  className="bg-inherit w-11/12 border-none outline-none"
-                />
-                {errors.email && touched.email && errors.email}
-              </div>
-            </div>
-            <div className="flex justify-between p-4 w-[440px] rounded-sm bg-[#E3EBF3]">
-              <input
-                type="email"
-                name="email"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.email}
-                className="bg-inherit w-11/12 border-none outline-none"
-              />
-              {errors.email && touched.email && errors.email}
-            </div>
 
             <input
               type="password"

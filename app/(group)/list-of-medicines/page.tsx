@@ -13,6 +13,7 @@ export default page;*/
 import { Payment, columns } from "./columns"
 import { DataTable } from "./data-table"
 import { Button } from "../../../components/ui/button"
+import Link from "next/link"
 
 async function getData(): Promise<Payment[]> {
   // Fetch data from your API here.
@@ -72,9 +73,10 @@ export default async function Page() {
             List of Medicines available for sales
             </p>
           </div>
-          <Button className="bg-[#F0483E] flex items-center justify-center">
-           <span>  + </span>
-           <span>Add New Item</span>
+          <Button className="bg-[#F0483E] flex items-center justify-center"  >
+            <Link href='list-of-medicines/add-medicine'> <span>  + </span>
+           <span>Add New Item</span></Link>
+          
           </Button>
         </div>
         </div>
