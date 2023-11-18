@@ -92,7 +92,7 @@ const SidebarItems = ({
           className={cn(
             "flex items-center   text-white  text-sm font-[500] pl-12 transition-all hover:text-white hover:bg-slate-300/20",
             isActive2 &&
-              "text-white bg-sky-200/20 hover:bg-sky-200/20 hover:text-white"
+              "text-white bg-sky-200/20 hover:bg-sky-200/20 hover:text-white hover:cursor-pointer"
           )}
         >
           <div className="flex items-center gap-x-2 py-4 justify-between">

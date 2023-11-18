@@ -39,9 +39,9 @@ const Inventory: React.FC = () => {
   ];
  
   return (
-    <>
+    <div className="h-screen bg-[#EDF1F5]">
      
-        <div className="flex-1 space-y-4 bg-[#EDF1F5]  p-8 pt-[30px]">
+        <div className="flex-1 space-y-4  p-8 pt-[30px]">
         <div className=" flex justify-between items-center space-y-2">
           <div>
             <h2 className="text-3xl font-bold tracking-tight">
@@ -57,14 +57,14 @@ const Inventory: React.FC = () => {
         </div>
         </div>
 
-        <div className="flex flex-wrap justify-between bg-[#EDF1F5] pb-[30px]">
+        <div className="flex flex-wrap  pb-[30px]">
           {cards.map((card, index) => (
             <SmallCard key={card.id} card={card} />
           ))}
         </div>
         
      
-    </>
+    </div>
   );
 };
 

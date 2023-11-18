@@ -11,7 +11,6 @@ interface Props {
 const Basic = ({ email }: Props) => {
   return (
     <div>
-      
       <Formik
         initialValues={{ email: "", password: "" }}
         validate={(values) => {
@@ -46,12 +45,12 @@ const Basic = ({ email }: Props) => {
             onSubmit={handleSubmit}
             className="flex-1 bg-[#EDF1F5] h-screen  px-8 "
           >
-            <div className=" flex justify-between items-center space-y-2">
-        <div>
-          <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
-          <p>A quick data overview of the inventory.</p>
-        </div>
-      </div>
+            <div className=" flex justify-between items-center py-6">
+              <div>
+                <h2 className="text-3xl font-bold tracking-tight">Add New Medicine</h2>
+                <p>*All fields are mandatory, except mentioned as (optional).</p>
+              </div>
+            </div>
             <div className="flex items-center gap-[26px] mb-[15px]">
               <div>
                 <label
@@ -180,7 +179,11 @@ const Basic = ({ email }: Props) => {
             {/*<button type="submit" disabled={isSubmitting}>
               Submit
       </button>*/}
-            <Button type="submit" disabled={isSubmitting} className="bg-[#F0483E] flex items-center justify-center mt-10">
+            <Button
+              type="submit"
+              disabled={isSubmitting}
+              className="bg-[#F0483E] flex items-center justify-center mt-10"
+            >
               Save Details
             </Button>
           </form>
