@@ -16,6 +16,7 @@ import {
   TableHeader,
   TableRow,
 } from "../../../components/ui/table"
+import Link from "next/link"
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
@@ -70,7 +71,8 @@ export function DataTable<TData, TValue>({
                   
                 ))}
                 <TableCell>
-                <a href="#" className="text-center"> {'>>'}</a>
+                <a href="/" className="text-center"> {'>>'}</a>
+                <Link href={`/list-of-medicine/medicine-details/${row.id}`} /*href='/list-of-medicine/medicine-details'*/></Link>
                 </TableCell>
                
               </TableRow>

@@ -65,7 +65,7 @@ export default function Page() {
   useEffect(()=>{
     const fetchData = async () => {
       const response = await fetch('http://127.0.0.1:8000/medicines/medicine', {headers: {
-        'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0IiwiaWF0IjoxNzAwOTU1ODcwLCJuYmYiOjE3MDA5NTU4NzAsImp0aSI6Ijg5OTMyODA1LTg2OTItNGY1Ny1hNjFiLWFhMjJmMjI3YzUzYyIsImV4cCI6MTcwMDk1Njc3MCwidHlwZSI6ImFjY2VzcyIsImZyZXNoIjpmYWxzZX0.SBkfLn6gnd328PrC2W9L3p4vS43akULXe2tsq3lR_eY',
+        'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0IiwiaWF0IjoxNzAxMTEzNDEwLCJuYmYiOjE3MDExMTM0MTAsImp0aSI6IjJiNTk5NGRmLTFjYWQtNDFkOS1hZjI1LTI5MTJjNzZmZDNmOCIsImV4cCI6MTcwMTExNDMxMCwidHlwZSI6ImFjY2VzcyIsImZyZXNoIjpmYWxzZX0.QMLV-iweNhmkgzrct6DWIl6kwq50xS1f8HhO-9OWj8Y',
         'Content-Type': 'application/json'
       }} );
       

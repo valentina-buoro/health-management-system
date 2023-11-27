@@ -28,8 +28,5 @@ export const columns: ColumnDef<Payment>[] = [
     accessorKey: "quantity",
     header: "Stock in Qty",
   },
-  {
-    accessorKey: "",
-    header: "Action",
-  },
+  
 ]

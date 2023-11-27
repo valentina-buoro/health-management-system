@@ -1,3 +1,7 @@
+"use client"
+
+import { useEffect, useState } from "react"
+
 import React from "react";
 import LongCard from "../../_components/cards/longCard";
 import {
@@ -6,6 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from "../../../../components/ui/card";
+import { useParams } from "next/navigation";
 
 const cards2 = [
   {
@@ -22,7 +27,25 @@ const cards2 = [
   },
 ];
 
-const page = () => {
+const Page = () => {
+
+  const {id} = useParams()
+
+  const [data, setData]  =  useState([])
+
+  useEffect(()=>{
+    const fetchData = async () => {
+      const response = await fetch(`http://127.0.0.1:8000/medicines/medicine${id}`, {headers: {
+        'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0IiwiaWF0IjoxNzAxMTEzNDEwLCJuYmYiOjE3MDExMTM0MTAsImp0aSI6IjJiNTk5NGRmLTFjYWQtNDFkOS1hZjI1LTI5MTJjNzZmZDNmOCIsImV4cCI6MTcwMTExNDMxMCwidHlwZSI6ImFjY2VzcyIsImZyZXNoIjpmYWxzZX0.QMLV-iweNhmkgzrct6DWIl6kwq50xS1f8HhO-9OWj8Y',
+        'Content-Type': 'application/json'
+      }} );
+      
+      const data = await response.json();
+      setData(data.data);
+      console.log(data.data);
+    };
+    fetchData();
+  },[] )
   return (
     <div>
       <section className="flex-1 flex-wrap  pt-[35px] ">
@@ -36,7 +59,7 @@ const page = () => {
         <div className="grid grid-cols-1 gap-[26px] ">
           <Card>
             <CardHeader>
-              <CardTitle>How to use</CardTitle>
+              <CardTitle>{data}</CardTitle>
             </CardHeader>
             <CardContent>
               <p>
@@ -64,4 +87,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
