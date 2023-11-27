@@ -72,7 +72,7 @@ export function DataTable<TData, TValue>({
                 ))}
                 <TableCell>
                 <a href="/" className="text-center"> {'>>'}</a>
-                <Link href={`/list-of-medicine/medicine-details/${row.id}`} /*href='/list-of-medicine/medicine-details'*/></Link>
+                <Link href={`/list-of-medicines/medicine-details/`} /*href='/list-of-medicine/medicine-details'*/></Link>
                 </TableCell>
                
               </TableRow>

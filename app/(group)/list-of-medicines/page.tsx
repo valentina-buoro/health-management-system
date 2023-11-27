@@ -65,7 +65,7 @@ export default function Page() {
   useEffect(()=>{
     const fetchData = async () => {
       const response = await fetch('http://127.0.0.1:8000/medicines/medicine', {headers: {
-        'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0IiwiaWF0IjoxNzAxMTEzNDEwLCJuYmYiOjE3MDExMTM0MTAsImp0aSI6IjJiNTk5NGRmLTFjYWQtNDFkOS1hZjI1LTI5MTJjNzZmZDNmOCIsImV4cCI6MTcwMTExNDMxMCwidHlwZSI6ImFjY2VzcyIsImZyZXNoIjpmYWxzZX0.QMLV-iweNhmkgzrct6DWIl6kwq50xS1f8HhO-9OWj8Y',
+        'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0IiwiaWF0IjoxNzAxMTE0ODIzLCJuYmYiOjE3MDExMTQ4MjMsImp0aSI6ImE3MDM3MjRhLWZlY2MtNDQxMy05MzljLTdjNmIzODhkMGE2MSIsImV4cCI6MTcwMTExNTcyMywidHlwZSI6ImFjY2VzcyIsImZyZXNoIjpmYWxzZX0.2cY37GWjdYRjdTyUZ0Ve5J8ZZcjGY4gx2dIA56NimUo',
         'Content-Type': 'application/json'
       }} );
       
