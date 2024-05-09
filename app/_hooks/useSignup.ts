@@ -5,9 +5,8 @@ const useSignup = (initialState:any, callback:any) => {
   const [values, setValues] = useState(initialState);
 
   const handleChange = (event:any) => {
-    const { name, value } = event.target;
-    setValues({ ...values, [name]: value });
-
+    const { name, value, checked } = event.target;
+    setValues({ ...values, [name]: checked? checked : value });
   };
 
   const handleSubmit = (event:any) => {
@@ -17,9 +16,7 @@ const useSignup = (initialState:any, callback:any) => {
 
   return {
     values,
-
     handleChange,
-
     handleSubmit,
 
   };

@@ -5,6 +5,7 @@ import { Payment, columns } from "./columns"
 import { DataTable } from "./data-table"
 import { Button } from "../../../components/ui/button"
 import Link from "next/link"
+import axios from "axios"
 
 /*async function getData(): Promise<Payment[]> {
   // Fetch data from your API here.
@@ -64,14 +65,16 @@ export default function Page() {
 
   useEffect(()=>{
     const fetchData = async () => {
-      const response = await fetch('http://127.0.0.1:8000/medicines/medicine', {headers: {
-        'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0IiwiaWF0IjoxNzAxMTE0ODIzLCJuYmYiOjE3MDExMTQ4MjMsImp0aSI6ImE3MDM3MjRhLWZlY2MtNDQxMy05MzljLTdjNmIzODhkMGE2MSIsImV4cCI6MTcwMTExNTcyMywidHlwZSI6ImFjY2VzcyIsImZyZXNoIjpmYWxzZX0.2cY37GWjdYRjdTyUZ0Ve5J8ZZcjGY4gx2dIA56NimUo',
+      const URL = "https://pharmacy-inventory-system-1vnk.onrender.com"
+      const token = localStorage.getItem("access_token")
+      const response = await axios.get(`${URL}/api/product/all`, {headers: {
+        'Authorization': `Bearer ${token}`,
         'Content-Type': 'application/json'
       }} );
       
-      const data = await response.json();
+      const data = await response.data.json();
       setData(data.data);
-      console.log(data.data);
+      console.log(data);
     };
     fetchData();
   },[] )

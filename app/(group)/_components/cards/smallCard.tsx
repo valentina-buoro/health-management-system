@@ -20,6 +20,7 @@ import {
         id:number
         borderColor:string  
         buttonBg:string
+        //backgroundColor:string
     }
   }
 
@@ -31,11 +32,11 @@ const SmallCard = ({
   return (
 
         <Card key={card.id} className= {`flex-col w-[125px] md:w-[212px]  rounded-t-[4px] rounded-b-none text-[#1D242E] ${card.borderColor} `}>
-              <CardHeader className="items-center">
+              <CardHeader className={`items-center `}>
                 <Image src={card.icon} alt="hii"  />
                 <CardTitle className=' text-[20px] text-center leading-[22px] font-bold '>{card.title}</CardTitle>
               </CardHeader>
-              <CardContent className="text-center text-[14px] leading-[22px] font-medium">{card.content}</CardContent>
+              <CardContent className={`text-center text-[14px] leading-[22px] font-medium `}>{card.content}</CardContent>
               <CardFooter className="w-full h-[27px] p-0">
                 <Button className={`w-full h-full rounded-none text-[#1D242E] ${card.buttonBg}`}>
                   {card.button}

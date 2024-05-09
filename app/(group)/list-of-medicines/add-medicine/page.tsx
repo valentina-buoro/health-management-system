@@ -76,7 +76,7 @@ const Basic = ({ email }: Props) => {
                   className="text-sm font-normal text-[#1D242E]"
                   htmlFor="email"
                 >
-                  Medicine ID
+                  Medicine Cost
                 </label>
                 <div className="flex justify-between p-4 w-[440px] rounded-sm bg-[#E3EBF3]">
                   <input

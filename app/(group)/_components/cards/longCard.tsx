@@ -23,8 +23,8 @@ interface CardProps {
 }
 const LongCard = ({ card }: CardProps) => {
   return (
-    <Card key={card.id} className="bg-[#FFF] min-w-[260px] border-[1px] border-[#1D242E4C]">
-      <CardHeader className="items-center flex-row justify-between h-[47px] border-b-[1px] border-b-[#1D242E4C]">
+    <Card key={card.id} className="bg-[#FFF] min-w-[260px] border-[1px] border-[#588157]">
+      <CardHeader className="items-center flex-row justify-between h-[47px] border-b-[1px] border-b-[#588157]">
         <CardTitle>{card.title}</CardTitle>
         <Button className=" rounded-none" variant="ghost">
           {card.button}

@@ -8,6 +8,7 @@ import User from "../../../../public/user.svg";
 import Email from "../../../../public/email.svg";
 import Password from "../../../../public/password.svg";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { SignupProps } from "../../../types";
 
 import useSignup from "../../../_hooks/useSignup";
@@ -15,39 +16,42 @@ import useSignup from "../../../_hooks/useSignup";
 const Index = () => {
   const initialState: SignupProps = {
     email: "",
-    full_name: "",
+    username: "",
     password: "",
+    isAdmin: false,
   };
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
   const [show, setShow] = useState(false);
+
+
+
   
-  //ReactModal.setAppElement("react-modals")
-
-  //ReactModal.setAppElement("*");
-
   const handleSubmitForm = async () => {
     setIsLoading(true);
+    const URL = "https://pharmacy-inventory-system-1vnk.onrender.com"
     try {
       const response = await axios.post(
-        "https://voting-basic.onrender.com/api/register",
-        values
+        `${URL}/api/user/register`,
+        ...values
       );
-      console.log("API response:", response.data);
+      console.log("API response:", response);
       if (response.data.success === true) {
-        localStorage.setItem("access_token", response.data.access_token);
+        localStorage.setItem("access_token", response.data.token);
         setShow(true);
         values.email = "";
-        values.full_name = "";
+        values.username = "";
         values.password = "";
+        values.isAdmin = false;
         console.log("Success");
+        redirect("/dashboard");
       } else {
-        throw new Error("Error posting data to API");
+        console.log(response)
       }
     } catch (error: any) {
-      setError(error.response.data.msg);
-      console.error("Error sending form data :", error);
+     
+      console.error("Error sending form data :",);
     } finally {
       setIsLoading(false);
     }
@@ -77,9 +81,9 @@ const Index = () => {
           <input
             className="bg-inherit w-11/12 border-none outline-none"
             placeholder="Enter full name"
-            id="full_name"
-            name="full_name"
-            value={values.full_name}
+            id="username"
+            name="username"
+            value={values.username}
             onChange={handleChange}
           />
           <button className="">
@@ -112,6 +116,7 @@ const Index = () => {
             <Image className="w-5" src={Password} alt={"div icon"} />
           </button>
         </div>
+        
         {/*<div className="flex justify-between p-4 max-w-[440px] w-[320px]  rounded-sm bg-[#E3EBF3]">
           <input
             className="bg-inherit w-11/12 border-none outline-none"
@@ -133,7 +138,7 @@ const Index = () => {
           {isLoading ? "...Submitting" : "Create Account"}
         </button>
 
-        <Link href="/login">
+        <Link href="/">
           already have an account? <a className="text-blue-500">Login</a>
         </Link>
       </div>

@@ -4,7 +4,8 @@ export interface LoginProps {
    }
    
    export interface SignupProps {
-       'full_name': string;
+       'username': string;
        'email': string;
        'password': string;
+       'isAdmin': boolean;
    }   

@@ -1,4 +1,5 @@
 // App.tsx
+
 import React from "react";
 import Sidebar from "./_components/sidebar";
 import Navbar from "./_components/navbar";
@@ -8,6 +9,8 @@ export default function DashboardLayout({
 }: {
   children: React.ReactNode;
 }) {
+
+
   return (
     <div className=" h-screen">
       <div className="h-[80px] md:pl-56 fixed inset-y-0 w-full z-50 "> 

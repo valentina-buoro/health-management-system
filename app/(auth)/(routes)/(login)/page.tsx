@@ -10,27 +10,27 @@ import useSignup from '../../../_hooks/useSignup'
 import { useRouter } from "next/navigation";
 
 const Index = () => {
+  
   const router = useRouter();
   const initialState: LoginProps = {
     email: "",
-   
     password: "",
   };
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
   const handleSubmitForm = async () => {
+    const URL = "https://pharmacy-inventory-system-1vnk.onrender.com"
     setIsLoading(true);
     try {
-      
       const response = await axios.post(
-        "https://voting-basic.onrender.com/api/login",values
+        `${URL}/api/user/login`,values
         
       );
-      console.log("API response:", response.data);
+      console.log("API response:", response);
 
       if (response.data.success === true) {
-        localStorage.setItem("access_token", response.data.message);
+        localStorage.setItem("access_token", response.data.token);
         // Data was posted successfully
         // Navigate to another page
         router.push("/dashboard");
@@ -77,7 +77,7 @@ const Index = () => {
             onChange={handleChange}
           />
           <button className="">
-            <Image className="w-5" src={Email} alt={"div icon"} />
+           <Image className="w-5" src={Email} alt={"div icon"} />
           </button>
         </div>
         <div className="flex justify-between p-4 lg:w-[440px] w-[320px]  rounded-sm bg-[#E3EBF3]">
@@ -98,11 +98,11 @@ const Index = () => {
             type="submit"
             onClick={handleSubmit}
           >
-            {isLoading ? "...Submitting" : "Create Account"}
+            {isLoading ? "...Submitting" : "Login"}
           </button>
           
   
-          <Link href='/'>
+          <Link href='/signup'>
             don&apos;t have an account?   <a className="text-blue-500">Signup</a>
           </Link>
         </div>

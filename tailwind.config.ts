@@ -18,3 +18,18 @@ const config: Config = {
   plugins: [],
 }
 export default config
+
+/**
+ * 
+ * 
+ * 
+    --clr-accent-100: #151421;
+    --clr-accent-600: #F5F5F5;
+    --clr-accent-700: #FEF9F5;
+    --clr-primary-300: #E8CECB;
+    --clr-primary-400: #FCACA1;
+
+    -ff-base: Poppins-Regular;
+    --ff-base-500: Poppins-Medium;
+    --ff-base-700: Poppins-Bold;
+ */
