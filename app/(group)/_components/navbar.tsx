@@ -46,7 +46,7 @@ const Navbar = () => {
 
   
   return (
-    <nav className='flex-1 bg-[#F7FAFD]  px-8 '>
+    <nav className='flex-1 bg-[#f8f7ff]  px-8 '>
      <div className='flex justify-between py-3 '>
      <div className='flex justify-between p-4 w-[440px] rounded-sm bg-[#E3EBF3]'>
         <input

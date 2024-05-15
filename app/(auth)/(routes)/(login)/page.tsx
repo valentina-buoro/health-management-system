@@ -4,14 +4,21 @@ import Image from "next/image";
 import axios from "axios";
 import Email from "../../../../public/email.svg";
 import Password from "../../../../public/password.svg";
+import Pharmacist from "../../../../public/pharmacist.png";
 import Link from "next/link";
 import { LoginProps } from "../../../types";
 import useSignup from '../../../_hooks/useSignup'
+import useAuthStore from "../../../stores/authStore"
 import { useRouter } from "next/navigation";
 
 const Index = () => {
-  
   const router = useRouter();
+
+  const login = useAuthStore((state) => state.login);
+  const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
+  const user = useAuthStore((state) => state.user);
+  const token = useAuthStore((state) => state.token);
+
   const initialState: LoginProps = {
     email: "",
     password: "",
@@ -21,6 +28,7 @@ const Index = () => {
 
   const handleSubmitForm = async () => {
     const URL = "https://pharmacy-inventory-system-1vnk.onrender.com"
+   
     setIsLoading(true);
     try {
       const response = await axios.post(
@@ -31,15 +39,18 @@ const Index = () => {
 
       if (response.data.success === true) {
         localStorage.setItem("access_token", response.data.token);
-        // Data was posted successfully
-        // Navigate to another page
+        document.cookie = `token=${response.data.token}`;
+        token(response.data.token);
+        login(response.data);
+        //user(response.data);
+        
         router.push("/dashboard");
-       console.log("Success");
+       console.log("Success" , );
       } else {
         throw new Error("Error posting data to API");
       }
     } catch (error: any) {
-      setError(error.response.data.msg);
+      setError(error);
       console.error("Error sending form data :", error);
     } finally {
       setIsLoading(false);
@@ -54,9 +65,11 @@ const Index = () => {
 
   return (
     <div className="flex">
-      <div className="hidden lg:flex lg:flex-col lg:items-center lg:justify-center lg:h-screen lg:w-2/5 lg:bg-gradient-to-b from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%">
-        <div className="flex justify-center items-center h-1/2">
-          <h1 className="text-white text-3xl font-bold">WIBA TEAM 4</h1>
+      <div className="hidden lg:flex lg:flex-col lg:items-center lg:justify-center lg:h-screen lg:w-2/5 lg:bg-gradient-to-b from-[#3d348b] from-10% via-[#3d348b] via-30% to-[#7678ed] to-90%">
+        <div className="flex flex-col justify-between items-center h-1/2">
+          
+          <Image src={Pharmacist} alt="Pharmacist" width = {400} height = {400} />
+          <h1 className="text-white text-3xl font-bold">IPharm</h1>
         </div>
         </div>
       <div className="flex flex-col items-center justify-center h-screen gap-6 mx-auto lg:w-3/5">
@@ -94,7 +107,7 @@ const Index = () => {
             </button>
           </div>
           <button
-            className="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% py-4 text-white rounded-full lg:w-[440px] w-[320px]  mt-10"
+            className="bg-gradient-to-b from-[#3d348b] from-20% via-[#3d348b] via-30% to-[#7678ed]  py-4 text-white rounded-full lg:w-[440px] w-[320px]  mt-10"
             type="submit"
             onClick={handleSubmit}
           >

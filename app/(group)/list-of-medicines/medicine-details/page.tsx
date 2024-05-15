@@ -1,8 +1,7 @@
 "use client"
 
-import { useEffect, useState } from "react"
-
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import LongCard from "../../_components/cards/longCard";
 import {
   Card,
@@ -30,24 +29,25 @@ const cards2 = [
 
 
 const Page = () => {
-
-  const {id} = useParams()
+  axios.defaults.withCredentials = true;
+  const {productName} = useParams()
 
   const [data, setData]  =  useState([])
 
   useEffect(()=>{
     const fetchData = async () => {
-      const response = await fetch(`http://127.0.0.1:8000/medicines/medicine/1`, {headers: {
-        'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0IiwiaWF0IjoxNzAxMTE0ODIzLCJuYmYiOjE3MDExMTQ4MjMsImp0aSI6ImE3MDM3MjRhLWZlY2MtNDQxMy05MzljLTdjNmIzODhkMGE2MSIsImV4cCI6MTcwMTExNTcyMywidHlwZSI6ImFjY2VzcyIsImZyZXNoIjpmYWxzZX0.2cY37GWjdYRjdTyUZ0Ve5J8ZZcjGY4gx2dIA56NimUo',
-        'Content-Type': 'application/json'
-      }} );
-      
-      const data = await response.json();
-      setData(data.data);
-      console.log(data.data);
+      const URL = "https://pharmacy-inventory-system-1vnk.onrender.com"
+      const response = await axios.get(`${URL}/api/product/panadol`, {
+        withCredentials: true,
+      });
+      console.log(response);
+      setData(response.data.products);
+      console.log(data);
     };
     fetchData();
-  },[] )
+  },
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  [] )
   return (
     <div>
       <section className="flex-1 flex-wrap  pt-[35px] ">
@@ -61,7 +61,7 @@ const Page = () => {
         <div className="grid grid-cols-1 gap-[26px] ">
           <Card>
             <CardHeader>
-              <CardTitle>{data.medicine_name}</CardTitle>
+              <CardTitle>{data}</CardTitle>
             </CardHeader>
             <CardContent>
               <p>

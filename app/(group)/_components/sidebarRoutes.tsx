@@ -12,7 +12,7 @@ const guestRoutes = [
     {
         icon: Dashboard,
         label: 'Dashboard',
-        href:'/'
+        href:'/dashboard'
     },
     {
         icon: Inventory,
