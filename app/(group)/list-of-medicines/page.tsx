@@ -206,13 +206,7 @@ export default function Page() {
 
   return (
     <div className="w-full">
-      <Button className="bg-[#F0483E] flex items-center justify-center">
-            <Link href="list-of-medicines/add-medicine">
-              {" "}
-              <span> + </span>
-              <span>Add New Item</span>
-            </Link>
-          </Button>
+      
       <div className="flex items-center py-4">
         <Input
           placeholder="Search Medicine..."
@@ -248,6 +242,15 @@ export default function Page() {
               })}
           </DropdownMenuContent>
         </DropdownMenu>
+      </div>
+      <div>
+      <Button className="bg-[#F0483E] flex items-center justify-center">
+            <Link href="list-of-medicines/add-medicine">
+              {" "}
+              <span> + </span>
+              <span>Add New Item</span>
+            </Link>
+          </Button>
       </div>
       <div className="rounded-md border">
         <Table>
