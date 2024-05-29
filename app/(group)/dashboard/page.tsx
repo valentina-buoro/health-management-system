@@ -84,10 +84,10 @@ const CardRow: React.FC = () => {
 
   return (
     <>
-    <div className="h-[80px]  fixed inset-y-0 w-full md:pr-56 z-50 "> 
+    <div className="h-[80px] fixed inset-y-0 w-full md:pr-56 z-50 "> 
         <Navbar/>
       </div>
-      <div className="flex-1 space-y-4 bg-[#b8b8ff]  p-8 pt-[30px] mb-8 ">
+      <div className="flex-1 space-y-4 bg-[#b8b8ff]  mt-20 px-8 pt-[30px] mb-8 ">
         <div className=" flex justify-between items-center space-y-2">
           <div>
             <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>

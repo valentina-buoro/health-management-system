@@ -21,13 +21,34 @@ const Navbar = () => {
     }, 1000);
 
     return () => clearInterval(intervalId);
-  }, []);
+  },
+  []);
 
   useEffect(() => {
-    setGreeting(getGreeting());
-  }, [time]);
+    const getGreeting = () => {
+      const currentHour = time.getHours();
+      //let greeting = '';
+      if (currentHour >= 5 && currentHour < 12) {
+        //greeting = 'Good morning';
+        setGreeting('Good morning');
+      } else if (currentHour >= 12 && currentHour < 18) {
+        //greeting = 'Good afternoon';
+        setGreeting('Good afternoon');
+      } else {
+        //greeting = 'Good evening';
+        setGreeting('Good evening');
+      }
+  
+     // return `${greeting}`;
+    };
+    getGreeting();
+  
+    //setGreeting(getGreeting());
+  }, 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  [time]);
 
-  const getGreeting = () => {
+  /*const getGreeting = () => {
     const currentHour = time.getHours();
     let greeting = '';
     if (currentHour >= 5 && currentHour < 12) {
@@ -41,7 +62,7 @@ const Navbar = () => {
     
 
     return `${greeting}`;
-  };
+  };*/
 
 
   
