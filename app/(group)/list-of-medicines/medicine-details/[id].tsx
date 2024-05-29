@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import LongCard from "../../_components/cards/longCard";
+
 import {
   Card,
   CardContent,
@@ -30,6 +31,8 @@ const cards2 = [
 
 const Page = () => {
   axios.defaults.withCredentials = true;
+  const params = useParams<{ id: string }>();
+  console.log(params?.id, "params");
   const {productName} = useParams()
 
   const [data, setData]  =  useState([])
@@ -37,7 +40,7 @@ const Page = () => {
   useEffect(()=>{
     const fetchData = async () => {
       const URL = "https://pharmacy-inventory-system-1vnk.onrender.com"
-      const response = await axios.get(`${URL}/api/product/panadol`, {
+      const response = await axios.get(`${URL}/api/product/${params}`, {
         withCredentials: true,
       });
       console.log(response);

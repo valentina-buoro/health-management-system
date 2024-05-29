@@ -152,7 +152,9 @@ export const columns: ColumnDef<Payment>[] = [
               Copy payment ID
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>Add to cart</DropdownMenuItem>
+            <DropdownMenuItem >
+              <Link href={`/list-of-medicines/medicine-details/${row.getValue("_id")}`}>View Medicine Details</Link>
+            </DropdownMenuItem>
             <DropdownMenuItem>View payment details</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
@@ -300,16 +302,6 @@ export default function Page() {
                 })}
             </DropdownMenuContent>
           </DropdownMenu>
-        </div>
-
-        <div className="mb-10 flex justify-end">
-          <Button className="bg-[#F0483E] flex items-center justify-center">
-            <Link href="list-of-medicines/add-medicine">
-              {" "}
-              <span> + </span>
-              <span>Add New Item</span>
-            </Link>
-          </Button>
         </div>
         <div className="rounded-md border">
           <Table>

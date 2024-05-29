@@ -6,11 +6,9 @@ import { Button } from "../../../../components/ui/button";
 import { MedicineProps } from "../../../types";
 import useSignup from "../../../_hooks/useSignup";
 
-interface Props {
-  email: string;
-}
 
-const Basic = ({ email }: Props) => {
+
+const Page = () => {
   const initialState: MedicineProps = {
     productName: "",
     category: "",
@@ -176,4 +174,4 @@ const Basic = ({ email }: Props) => {
   );
 };
 
-export default Basic;
+export default Page;
