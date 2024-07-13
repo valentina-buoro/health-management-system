@@ -21,10 +21,16 @@ const Page = () => {
   const [error, setError] = useState(null);
 
   const handleSubmitForm = async () => {
+    const token = localStorage.getItem("token");
     const URL = "https://pharmacy-inventory-system-1vnk.onrender.com";
     setIsLoading(true);
     try {
-      const response = await axios.post(`${URL}/api/product/create`, values);
+      const response = await axios.post(`${URL}/api/product/create`, values, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
       console.log("API response:", response);
 
       if (response.data.success === true) {

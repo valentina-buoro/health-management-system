@@ -74,11 +74,7 @@ export const columns: ColumnDef<Payment>[] = [
     enableSorting: false,
     enableHiding: false,
   },
-  {
-    accessorKey: "_id",
-    header: "Medicine ID",
-    cell: ({ row }) => <div className="capitalize">{row.getValue("_id")}</div>,
-  },
+  
   {
     accessorKey: "category",
     header: "Category",
@@ -187,9 +183,12 @@ export default function Page() {
   useEffect(
     () => {
       const fetchData = async () => {
+        const token = localStorage.getItem("token");
         try {
           const response = await axios.get(`${URL}/api/product/all`, {
-            withCredentials: true,
+           headers: {
+              Authorization: `Bearer ${token}`,
+            }
           });
           setData(response.data.products);
         } catch (error: any) {
@@ -303,7 +302,7 @@ export default function Page() {
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
-        <div className="rounded-md border">
+        <div className="rounded-md border ">
           <Table>
             <TableHeader>
               {table.getHeaderGroups().map((headerGroup) => (
@@ -338,10 +337,10 @@ export default function Page() {
                         )}
                       </TableCell>
                     ))}
-                    <Button className="bg-[#F0483E] flex items-center justify-center" onClick={addToCart}>
+                    <div className="flex items-center h-full"><Button className="bg-[#F0483E] text-xs items-center flex w-[120px] justify-between px-4 mb-auto" onClick={addToCart}>
                       <span> + </span>
-                      <span>Add To Cart</span>
-                    </Button>
+                      <span className="text-xs ">Add To Cart</span>
+                    </Button></div>
                   </TableRow>
                 ))
               ) : (

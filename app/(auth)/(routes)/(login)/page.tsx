@@ -38,8 +38,8 @@ const Index = () => {
       console.log("API response:", response);
 
       if (response.data.success === true) {
-        localStorage.setItem("access_token", response.data.token);
-        document.cookie = `token=${response.data.token}`;
+        localStorage.setItem("token", response.data.token);
+    
         token(response.data.token);
         login(response.data);
         //user(response.data);
@@ -65,7 +65,7 @@ const Index = () => {
 
   return (
     <div className="flex">
-      <div className="hidden lg:flex lg:flex-col lg:items-center lg:justify-center lg:h-screen lg:w-2/5 lg:bg-gradient-to-b from-[#3d348b] from-10% via-[#3d348b] via-30% to-[#7678ed] to-90%">
+      <div className="hidden lg:flex lg:flex-col lg:items-center lg:justify-center lg:h-screen lg:w-2/5 bg-gradient-to-t from-[#04619C] from-0% to-[#2C8FA0] to-100%">
         <div className="flex flex-col justify-between items-center h-1/2">
           
           <Image src={Pharmacist} alt="Pharmacist" width = {400} height = {400} />
@@ -107,7 +107,7 @@ const Index = () => {
             </button>
           </div>
           <button
-            className="bg-gradient-to-b from-[#3d348b] from-20% via-[#3d348b] via-30% to-[#7678ed]  py-4 text-white rounded-full lg:w-[440px] w-[320px]  mt-10"
+            className="bg-[#04619C] py-4 text-white rounded-full lg:w-[440px] w-[320px]  mt-10"
             type="submit"
             onClick={handleSubmit}
           >

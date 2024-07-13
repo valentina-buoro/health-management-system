@@ -11,7 +11,7 @@ const Sidebar = () => {
 //const history = useRouter();
   
   return (
-    <nav className=" hidden md:flex flex-col bg-[#3d348b] h-full w-56 fixed top-0 left-0 overflow-y-auto shadow-sm">
+    <nav className=" hidden md:flex flex-col bg-gradient-to-r from-[#04619C] from-0% to-[#2C8FA0] to-100% h-full w-56 fixed top-0 left-0 overflow-y-auto shadow-sm">
       <div className="p-6">
         <Logo />
         <h1 className="text-2xl font-semibold text-white py-2">Pharmacy</h1>

@@ -11,10 +11,10 @@ export default function DashboardLayout({
 
 
   return (
-    <div className=" h-screen bg-[#f8f7ff]">
+    <div className=" h-screen bg-white">
       
       <Sidebar />
-      <main className=" md:pl-56 bg-[#f8f7ff]">
+      <main className=" md:pl-56 bg-white">
         {/* Main content goes here */}
        {children}
         {/* Add your main content */}

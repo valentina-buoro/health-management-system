@@ -87,7 +87,7 @@ const CardRow: React.FC = () => {
     <div className="h-[80px] fixed inset-y-0 w-full md:pr-56 z-50 "> 
         <Navbar/>
       </div>
-      <div className="flex-1 space-y-4 bg-[#b8b8ff]  mt-20 px-8 pt-[30px] mb-8 ">
+      <div className="flex-1 space-y-4 bg-gradient-to-t from-[#04619C] from-0% to-[#2C8FA0] to-100% text-white  mt-20 px-8 pt-[30px] mb-8 ">
         <div className=" flex justify-between items-center space-y-2">
           <div>
             <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
@@ -102,7 +102,7 @@ const CardRow: React.FC = () => {
           <SmallCard key={card.id} card={card} />
         ))}
       </div>
-      <div className="flex-1 flex-wrap  pt-[35px] bg-[#f8f7ff]  ">
+      <div className="flex-1 flex-wrap  pt-[35px]   ">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-[26px] ">
           {cards2.map((card) => (
             <LongCard key={card.id} card={card} />

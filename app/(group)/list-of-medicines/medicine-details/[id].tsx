@@ -30,7 +30,7 @@ const cards2 = [
 
 
 const Page = () => {
-  axios.defaults.withCredentials = true;
+  //axios.defaults.withCredentials = true;
   const params = useParams<{ id: string }>();
   console.log(params?.id, "params");
   const {productName} = useParams()
@@ -39,18 +39,21 @@ const Page = () => {
 
   useEffect(()=>{
     const fetchData = async () => {
+      const token = localStorage.getItem("token");
       const URL = "https://pharmacy-inventory-system-1vnk.onrender.com"
       const response = await axios.get(`${URL}/api/product/${params}`, {
-        withCredentials: true,
+        headers: {
+          Authorization: `Bearer ${token}`,
+        }
       });
-      console.log(response);
+      console.log(response, 'response');
       setData(response.data.products);
       console.log(data);
     };
     fetchData();
   },
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  [] )
+  
+  [data, params] )
   return (
     <div>
       <section className="flex-1 flex-wrap  pt-[35px] ">
