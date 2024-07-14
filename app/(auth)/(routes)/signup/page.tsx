@@ -7,6 +7,7 @@ import Image from "next/image";
 import User from "../../../../public/user.svg";
 import Email from "../../../../public/email.svg";
 import Password from "../../../../public/password.svg";
+import Pharmacist from "../../../../public/pharmacist.png";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { SignupProps } from "../../../types";
@@ -66,8 +67,10 @@ const Index = () => {
   return (
     <div className="flex">
       <div className="hidden lg:flex lg:flex-col lg:items-center lg:justify-center lg:h-screen lg:w-2/5 bg-gradient-to-t from-[#04619C] from-0% to-[#2C8FA0] to-100%">
-        <div className="flex justify-center items-center h-1/2">
-          <h1 className="text-white text-3xl font-bold">WIBA TEAM 4</h1>
+      <div className="flex flex-col justify-between items-center h-1/2">
+          
+          <Image src={Pharmacist} alt="Pharmacist" width = {400} height = {400} />
+          <h1 className="text-white text-3xl font-bold">IPharm</h1>
         </div>
       </div>
       <div className="flex flex-col items-center justify-center h-screen gap-6 mx-auto lg:w-3/5">
