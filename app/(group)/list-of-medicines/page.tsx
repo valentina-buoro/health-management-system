@@ -51,7 +51,7 @@ export type Payment = {
   //status: "pending" | "processing" | "success" | "failed"
 };
 
-export const columns: ColumnDef<Payment>[] = [
+const columns: ColumnDef<Payment>[] = [
   {
     id: "select",
     header: ({ table }) => (
