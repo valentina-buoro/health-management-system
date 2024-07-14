@@ -159,7 +159,8 @@ export const columns: ColumnDef<Payment>[] = [
   },
 ];
 
-export default function Page() {
+
+const Page: React.FC = () => {
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
@@ -420,3 +421,5 @@ export default function Page() {
     </div>
   );
 }
+
+export default Page;
