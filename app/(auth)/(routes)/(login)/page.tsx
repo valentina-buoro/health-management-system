@@ -2,6 +2,7 @@
 import React , {useState} from "react";
 import Image from "next/image";
 import axios from "axios";
+import Swal from "sweetalert2";
 import Email from "../../../../public/email.svg";
 import Password from "../../../../public/password.svg";
 import Pharmacist from "../../../../public/pharmacist.png";
@@ -35,7 +36,6 @@ const Index = () => {
         `${URL}/api/user/login`,values
         
       );
-      console.log("API response:", response);
 
       if (response.data.success === true) {
         localStorage.setItem("token", response.data.token);
@@ -45,12 +45,16 @@ const Index = () => {
         //user(response.data);
         
         router.push("/dashboard");
-       console.log("Success" , );
       } else {
         throw new Error("Error posting data to API");
       }
     } catch (error: any) {
       setError(error);
+      Swal.fire({
+        title: "Oops",
+        text: error.response.data.message,
+        icon: "error",
+      });
       console.error("Error sending form data :", error);
     } finally {
       setIsLoading(false);

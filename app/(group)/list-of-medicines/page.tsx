@@ -39,9 +39,10 @@ import {
   TableHeader,
   TableRow,
 } from "../../../components/ui/table";
+import { Avatar, AvatarFallback, AvatarImage } from "../../../components/ui/avatar";
 
 export type Payment = {
-  id: string;
+  _id: string;
   productName: string;
   category: string;
   quantity: number;
@@ -126,9 +127,12 @@ const columns: ColumnDef<Payment>[] = [
   },
   {
     id: "actions",
+    header: () => <div className="sr-only">Actions</div>,
+    
     enableHiding: false,
     cell: ({ row }) => {
-      const payment = row.original;
+      const payment = row.original.productName;
+      console.log(payment, 'original');
 
       return (
         <DropdownMenu>
@@ -149,7 +153,7 @@ const columns: ColumnDef<Payment>[] = [
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem >
-              <Link href={`/list-of-medicines/medicine-details/${row.getValue("_id")}`}>View Medicine Details</Link>
+              <Link href={`/list-of-medicines/medicine-details/${payment}`}>View Medicine Details</Link>
             </DropdownMenuItem>
             <DropdownMenuItem>View payment details</DropdownMenuItem>
           </DropdownMenuContent>
@@ -396,12 +400,18 @@ const Page: React.FC = () => {
         </div>
         <div>
           {customerData ? (
-            <div>
-              <div>{customerName}</div>
-              <div>{customerEmail}</div>
+            <div className="flex items-center space-x-4">
+              <Avatar>
+               
+                <AvatarFallback>{customerName.slice(0, 2).toUpperCase()}</AvatarFallback>
+              </Avatar>
+              <div>
+                <div className="font-semibold">{customerName}</div>
+                <div className="text-sm text-gray-500">{customerEmail}</div>
+              </div>
             </div>
           ) : customerError ? (
-            <div> {customerError}</div>
+            <div className="text-red-500"> {customerError}</div>
           ) : (
             <div> </div>
           )}

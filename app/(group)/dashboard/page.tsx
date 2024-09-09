@@ -91,7 +91,7 @@ const CardRow: React.FC = () => {
         <div className=" flex justify-between items-center space-y-2">
           <div>
             <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
-            <p>A quick data overview of the inventory.</p>
+            <p>A quick data overview of IPharma 👩🏾‍⚕️ 💊.</p>
           </div>
           <Button>Download Report</Button>
         </div>

@@ -4,6 +4,7 @@ import React from 'react'
 import SidebarItems from "./sideItems"
 import Dashboard from '../../../public/sidebarDashboard.svg'
 import Inventory from '../../../public/sidebarInventory.svg'
+import Persons from '../../../public/persons.svg'
 import Reports from '../../../public/sidebarReport.svg'
 import DropDown from '../../../public/dropdown.svg'
 import Settings from '../../../public/settings.svg'
@@ -22,6 +23,13 @@ const guestRoutes = [
         href:'/inventory',
         href2:'/list-of-medicines',
         collapsible: true
+    },
+    {
+        icon: Persons,
+        label: 'Accounts',
+        label2: 'Add New Account',
+        href:'/accounts',
+       
     },
     {
         icon: Reports,
